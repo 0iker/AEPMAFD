@@ -1,0 +1,110 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1em;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1em;
+  padding: .5em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 1em;
+  align-items: center;
+}
+
+#logo img {
+  max-height: 100px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav > label {
+  font-size: 2em;
+  cursor: pointer;
+  display: block;
+}
+
+#chkMenu {
+  display: none;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+#menu > li {
+  margin: 0.8em 0;
+  border-bottom: 1px dotted #5d5d5d;
+}
+#menu > li > a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+#chkMenu:checked ~ #menu {
+  max-height: 10em;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 560px) {
+  .container {
+    width: 1200px;
+  }
+
+  header {
+    align-items: center;
+  }
+
+  nav > label {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    max-height: none;
+    padding: 0.5em 0;
+  }
+
+  #menu > li {
+    display: inline-block;
+    padding: 0 1em;
+    border: none;
+    border: 1px black;
+    border-style: dotted dotted none none;
+  }
+
+  #menu > li:last-child {
+    border: 1px #5d5d5d;
+    border-style: dotted none none none;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

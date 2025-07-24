@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Página Web</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte</title>
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a mi sitio web</h1>
+  <header class="container">
+    <div id="logo">
+      <a>
+        <img src="./assets/logo/AEPMAFD_logo(2).jpg" alt="Logo de la Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte" title="Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte"/>
+      </a>
+    </div>
     <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Sobre mí</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
+      <label for="chkMenu">&equiv;</label>
     </nav>
   </header>
 
-  <main>
+  <section class="container">
+  <input type="checkbox" id="chkMenu">
+  <ul id="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="mision.html">Misión</a></li>
+    <li><a href="objetivos.html">Objetivos</a></li>
+    <li><a href="arquitectura.html">Arquitectura</a></li>
+  </ul>
+  </section>
+
+  <main class="container">
     <section>
-      <h2>Sección principal</h2>
-      <p>Este es el contenido principal de la página.</p>
+      <p>La <b>Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte</b>  
+        es una organización española concebida para promover, formar, acreditar y difundir el conocimiento 
+        en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte a todos los interesados</p>
     </section>
   </main>
 
-  <footer>
+  <footer class="container">
     <p>&copy; 2025 Mi Nombre. Todos los derechos reservados.</p>
   </footer>
 </body>
