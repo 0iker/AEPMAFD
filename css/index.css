@@ -18,13 +18,6 @@ main {
   flex: 1;
 }
 
-.container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1em;
-}
-
 .content {
   margin-top: 2em;
 }
@@ -40,7 +33,6 @@ main {
 footer {
   text-align: center;
   position: relative;
-  /* bottom: 0; */
   width: 100%;
   font-size: 0.8em;
 }
@@ -83,21 +75,116 @@ nav > label {
 #menu > li {
   margin-top: 0.8em;
   border-bottom: 1px dotted #5d5d5d;
+   padding: 0.3em;
 }
 #menu > li > a {
   text-decoration: none;
   color: #000;
 }
-
-
 #chkMenu:checked ~ #menu {
-  max-height: 10em;
+  max-height: 20em;
+  width: 100%;
+  text-align: left;
 }
+
+
+#banner {
+  position: relative;
+  width: 100%;
+}
+#banner img {
+  max-height: 125px;
+  display: block;
+  overflow: hidden;
+}
+#banner h1 {
+  position: absolute;
+  top: -13%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 24px;
+  font-variant: small-caps;
+  text-shadow: 0 0 3px rgb(79, 75, 81), 3px 3px 5px #000;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+
+#conocenos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+#conocenos div {
+  padding: 0.2em 2em;
+}
+#conocenos img {
+  max-height: 250px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+#objetivos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+#objetivos p {
+  margin-left: 0.5em;
+}
+#objetivos div {
+  max-width: 380px;
+}
+#objetivos div ul {
+  padding-right: 1em;
+}
+#objetivos div ul li {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  font-size: 1em;
+}
+#objetivos img {
+  max-height: 235px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+#actividades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+#actividades ul {
+  padding-right: 2.5em;
+}
+#actividades ul li {
+  padding: 0.6em;
+}
+#actividades img {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-height: 370px;
+}
+
 
 #DivIntro {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 
 #DivIntro img {
@@ -109,12 +196,17 @@ nav > label {
   max-width: 500px;
   margin-top: 1em;
   font-size: 1.3em;
+  padding-left: 0.9em;
+  padding-right: 0.9em;
 }
 
 /* Estilos para pantallas grandes */
 @media (min-width: 560px) {
   .container {
     width: 1200px;
+    padding: 0 1em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   header {
@@ -146,47 +238,24 @@ nav > label {
     border-style: dotted none none none;
   }
 
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #banner {
-    position: relative;
-    width: 100%;
-  }
-
   #banner img {
-    max-height: 125px;
     width: 100%;
-    display: block;
   }
-  #banner h1 {
-    position: absolute;
-    top: -13%;
-    left: 0;
-    width: 100%;
-    height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-    font-size: 24px;
-    font-variant: small-caps;
-    text-shadow: 0 0 3px rgb(79, 75, 81), 3px 3px 5px #000;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
+  #DivIntro {
+    flex-direction: row;
+  }
+  #intro {
+    padding: 0;
   }
 
   #actividades {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     margin-left: 60px;
     width: 70em;
+  }
+  #actividades ul {
+    padding-right: 0;
   }
   #actividades ul li {
     padding: 1em;
@@ -194,34 +263,37 @@ nav > label {
   #actividades img {
     margin-left: 30px;
     max-height: 325px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   #objetivos {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     margin-left: 30px;
   }
-  #objetivos p {
-    margin-left: 0.5em;
+  #objetivos div {
+    max-width: 580.7px;
   }
   #objetivos div ul li {
     padding: 0.5em;
-    font-size: 1em;
   }
   #objetivos img {
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 30px;
     max-height: 350px;
   }
 
   #conocenos {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     margin-left: 60px;
+  }
+  #conocenos div {
+    padding: 0;
   }
   #conocenos img {
     margin-left: 30px;
     max-height: 350px;
+    margin: 0;
   }
 }
