@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -22,14 +23,6 @@ main {
   margin-top: 2em;
 }
 
-#estructura {
-  margin-top: 2em;
-  margin-left: 30px;
-}
-#estructura ul li {
-  font-size: 13px;
-}
-
 footer {
   text-align: center;
   position: relative;
@@ -41,7 +34,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: left;
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   align-items: center;
 }
 
@@ -75,7 +69,7 @@ nav > label {
 #menu > li {
   margin-top: 0.8em;
   border-bottom: 1px dotted #5d5d5d;
-   padding: 0.3em;
+  padding: 0.3em;
 }
 #menu > li > a {
   text-decoration: none;
@@ -91,6 +85,7 @@ nav > label {
 #banner {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 #banner img {
   max-height: 125px;
@@ -128,7 +123,7 @@ nav > label {
   padding: 0.2em 2em;
 }
 #conocenos img {
-  max-height: 250px;
+  max-height: 220px;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -141,21 +136,22 @@ nav > label {
   margin-top: 2em;
 }
 #objetivos p {
-  margin-left: 0.5em;
+  margin-left: 1.3em;
 }
 #objetivos div {
   max-width: 380px;
 }
 #objetivos div ul {
-  padding-right: 1em;
+  padding-right: 2em;
 }
 #objetivos div ul li {
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
   font-size: 1em;
+  font-size: 13px;
 }
 #objetivos img {
-  max-height: 235px;
+  max-height: 215px;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -168,7 +164,7 @@ nav > label {
   margin-top: 2em;
 }
 #actividades ul {
-  padding-right: 2.5em;
+  padding-right: 2em;
 }
 #actividades ul li {
   padding: 0.6em;
@@ -176,7 +172,19 @@ nav > label {
 #actividades img {
   margin-top: 1em;
   margin-bottom: 1em;
-  max-height: 370px;
+  max-height: 330px;
+}
+
+
+#estructura {
+  margin-top: 2em;
+  margin-left: 20px;
+}
+#estructura h3 {
+  font-size: 13px;
+}
+#estructura ul li {
+  font-size: 13px;
 }
 
 
@@ -211,6 +219,7 @@ nav > label {
 
   header {
     align-items: center;
+    padding: 1em;
   }
 
   nav > label {
@@ -249,6 +258,10 @@ nav > label {
     padding: 0;
   }
 
+  #estructura {
+    margin-left: 30px;
+  }
+
   #actividades {
     flex-direction: row;
     margin-left: 60px;
@@ -276,6 +289,7 @@ nav > label {
   }
   #objetivos div ul li {
     padding: 0.5em;
+    font-size: 14px;
   }
   #objetivos img {
     margin-top: 0;
