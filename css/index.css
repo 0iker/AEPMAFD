@@ -211,6 +211,52 @@ nav > label {
   padding-right: 0.9em;
 }
 
+
+.carrusel-container {
+  position: relative;
+  margin-bottom: 1em;
+  height: 400px;
+}
+.carrusel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.carrusel > .item-carrusel {
+  position: relative;
+  display: none;
+  transition: transform 0.5s ease-in-out;
+}
+.item-carrusel.active {
+  display: block;
+  position: relative;
+}
+.item-carrusel img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  object-position: center;
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  z-index: 2;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
 /* Estilos para pantallas grandes */
 @media (min-width: 560px) {
   .container {
