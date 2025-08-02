@@ -6,7 +6,7 @@
   <title>Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte</title>
   <link rel="icon" type="image/png" href="./assets/logo/IconoWeb.png">
   <link rel="stylesheet" href="css/index.css" />
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
 </head>
 <body>
    <header class="container">
@@ -37,19 +37,12 @@
       <img src="./assets/img/banner3.jpg">
     </div>
     <section class="content">
-      <div id="DivIntro">
-        <img src="./assets/logo/AEPMAFD_logo(2).jpg">
-        <p id="intro">La <b>Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte</b>  
-          es una organización española concebida para promover, formar, acreditar y difundir el conocimiento 
-          en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte a todos los interesados
-        </p>
-      </div>
       <div class="carrusel-container">
         <div class="carrusel">
-          <div class="item-carrusel ">
+          <div class="item-carrusel active">
             <img src="./assets/img/carrusel1.jpg" alt="Imagen 1">
           </div>
-          <div class="item-carrusel active">
+          <div class="item-carrusel">
             <img src="./assets/img/carrusel2.jpg" alt="Imagen 2">
           </div>
           <div class="item-carrusel">
@@ -61,6 +54,13 @@
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+      <div id="DivIntro">
+        <img src="./assets/logo/AEPMAFD_logo(2).jpg">
+        <p id="intro">La <b>Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte</b>  
+          es una organización española concebida para promover, formar, acreditar y difundir el conocimiento 
+          en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte a todos los interesados
+        </p>
       </div>
     </section>
   </main>

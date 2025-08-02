@@ -22,15 +22,17 @@ main {
   flex: 1;
 }
 
-.content {
-  margin-top: 2em;
-}
-
 footer {
   text-align: center;
   position: relative;
   width: 100%;
   font-size: 0.8em;
+  background-color: rgba(0, 0, 0, 0.264);
+  margin-top: 1em;
+}
+footer p {
+  padding: 0.5em;
+  color: #000;
 }
 
 header {
@@ -89,6 +91,7 @@ nav > label {
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 #banner img {
   max-height: 125px;
@@ -215,7 +218,10 @@ nav > label {
 .carrusel-container {
   position: relative;
   margin-bottom: 1em;
-  height: 400px;
+  max-height: 400px;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .carrusel {
   width: 100%;
@@ -223,9 +229,9 @@ nav > label {
   overflow: hidden;
   height: 100%;
 }
-.carrusel > .item-carrusel {
-  position: relative;
+.item-carrusel {
   display: none;
+  position: relative;
   transition: transform 0.5s ease-in-out;
 }
 .item-carrusel.active {
@@ -259,6 +265,10 @@ nav > label {
 
 /* Estilos para pantallas grandes */
 @media (min-width: 560px) {
+  html {
+    overflow-y: 0;
+  }
+
   .container {
     width: 1200px;
     padding-left: 1em;
