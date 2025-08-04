@@ -58,7 +58,7 @@ header {
   background-color: #DADADA;
 }
 .fondo1 #menu-container {
-  width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -282,7 +282,6 @@ nav > label {
   right: 10px;
 }
 
-/* Estilos para pantallas grandes */
 @media (min-width: 560px) {
   html {
     overflow-y: 0;
@@ -314,7 +313,6 @@ nav > label {
   #menu {
     display: flex;
     max-height: none;
-    /* padding-top: 0.5em; */
   }
 
   #menu > li {
@@ -395,4 +393,10 @@ nav > label {
     max-height: 350px;
     margin: 0;
   }
+
+  .fondo1 #menu-container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
