@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  subtitle?: string;
+}
+
+const { title, image, subtitle } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <img src={image} alt="" class="max-h-31.25 w-full object-cover md:h-80" />
+  <div class="absolute inset-0 bg-black/45"></div>
+
+  <div class="absolute inset-0 flex items-center">
+    <div class="mx-auto w-full max-w-8xl px-6">
+      <h1
+        class="w-full h-full flex justify-center text-white font-bold [font-variant:small-caps] tracking-tight md:text-[30px]"
+      >
+        {title}
+      </h1>
+      {
+        subtitle && (
+          <p class="mt-4 max-w-2xl text-base text-white/90 md:text-lg">
+            {subtitle}
+          </p>
+        )
+      }
+    </div>
+  </div>
+</section>

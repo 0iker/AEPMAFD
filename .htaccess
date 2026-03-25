@@ -1,7 +1,0 @@
-# Configurar index.html como página por defecto
-DirectoryIndex index.html
-
-# Redireccionar index.html a la raíz
-RewriteEngine On
-RewriteCond %{THE_REQUEST} /index\.html
-RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
