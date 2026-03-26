@@ -1,0 +1,50 @@
+---
+import PageHero from "@components/PageHero.astro";
+import Content from "@components/Content.astro";
+
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <PageHero title="Conócenos" />
+  <Content>
+    <Fragment slot="left">
+      <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
+        Sobre la asociación
+      </h2>
+      <p class="mt-4 text-sm leading-6 text-justify text-neutral-950">
+        La <b
+          >Asociación Española de Psicopedagogía de la Motricidad, la Actividad
+          Física y el Deporte</b
+        > es una organización española concebida para promover, formar, acreditar
+        y difundir el conocimiento en Psicopedagogía de la Motricidad, la Actividad
+        Física y el Deporte a todos los interesados
+      </p>
+      <p class="mt-4 text-sm leading-6 text-justify text-neutral-950">
+        En la <b>AEPMAFD</b> creemos firmemente que la psicopedagogía es un campo
+        de conocimiento único y diferente, que tiene su campo de acción en la motricidad,
+        la actividad física y el deporte. Desde estas premisas queremos ofertar diferentes
+        acciones y proyectos para la mejora del ser humano a través de la psicopedagogía
+        y el movimiento.
+      </p>
+      <h3 class="mt-3 text-xl font-semibold text-secondary md:text-2xl">
+        Misión
+      </h3>
+      <p class="text-sm leading-6 text-justify text-neutral-950">
+        La Asociación Española de Psicopedagogía de la Motricidad, la Actividad
+        Física y el Deporte <b
+          >tiene la misión de formar, acreditar y promover</b
+        > las actividades profesionales propias de la Psicopedagogía de la Motricidad,
+        la Actividad Física y el Deporte, así como orientar, asesorar y formar a todas
+        las personas interesadas, relacionadas con la Psicopedagogía y el movimiento.
+      </p>
+    </Fragment>
+    <Fragment slot="right">
+      <img
+        src="/logo-pmafd.svg"
+        alt="Logotipo de abreviatirua AEPMAFD"
+        class="mx-auto w-full max-w-sm object-contain"
+      />
+    </Fragment>
+  </Content>
+</Layout>

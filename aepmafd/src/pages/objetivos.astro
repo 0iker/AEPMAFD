@@ -1,0 +1,68 @@
+---
+import PageHero from "@components/PageHero.astro";
+import Content from "@components/Content.astro";
+
+import Layout from "@layouts/Layout.astro";
+import imgObjetivos from "@assets/objetivos.webp";
+
+import { Image } from "astro:assets";
+---
+
+<Layout>
+  <PageHero title="Objetivos" />
+  <Content>
+    <Fragment slot="left">
+      <h2 class="py-2 mb-2 text-2xl font-semibold text-secondary md:text-3xl">
+        OBJETIVOS GENERALES:
+      </h2>
+      <ul class="list-disc pl-5">
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          <b>Acreditar a los profesionales</b> de la Psicopedagogía de la Motricidad,
+          la Actividad Física y el Deporte
+        </li>
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          Ofrecer <b>actividades de formación y servicios</b> de la Psicopedagogía
+          de la Motricidad, la Actividad Física y el Deporte
+        </li>
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          Promover la <b>difusión del conocimiento en esta materia</b> en todos los
+          estamentos educativos y deportivos
+        </li>
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          Proporcionar un <b>foro de intercambio de información</b> en Psicopedagogía
+          de la Motricidad, la Actividad Física y el Deporte
+        </li>
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          Fomentar <b
+            >proyectos de colaboración con distintas entidades de la educación y
+            el deporte</b
+          > para el desarrollo de la Psicopedagogía de la Motricidad, la Actividad
+          Física y el Deporte
+        </li>
+        <li
+          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+        >
+          Promover <b>Congresos y eventos de máxima audiencia</b> en pro de la Psicopedagogía
+          de la Motricidad, la Actividad Física y el Deporte
+        </li>
+      </ul>
+    </Fragment>
+    <Fragment slot="right">
+      <Image
+        src={imgObjetivos}
+        alt="Imagen representativa de los objetivos de la AEPMAFD"
+        class="mx-auto w-full max-w-lg object-contain"
+      />
+    </Fragment>
+  </Content>
+</Layout>

@@ -1,0 +1,146 @@
+---
+interface Slide {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  slides: Slide[];
+  interval?: number;
+}
+
+const { slides = [], interval = 5000 } = Astro.props as Props;
+---
+
+{
+  slides.length > 0 && (
+    <section
+      class="mx-auto w-full max-w-7xl py-5"
+      data-carousel
+      data-interval={interval}
+    >
+      <div class="relative overflow-hidden rounded-2xl shadow">
+        <div class="relative h-55 sm:h-75 md:h-105 lg:h-125">
+          {slides.map((slide, index) => (
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              class:list={[
+                "carousel-slide absolute inset-0 w-full h-full object-cover object-center align-middle",
+                index === 0 && "is-active",
+              ]}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          class="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 px-4 py-2 text-white transition hover:bg-black/70"
+          data-prev
+          aria-label="Imagen anterior"
+        >
+          &#10094;
+        </button>
+
+        <button
+          type="button"
+          class="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 px-4 py-2 text-white transition hover:bg-black/70"
+          data-next
+          aria-label="Imagen siguiente"
+        >
+          &#10095;
+        </button>
+
+        <div class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          {slides.map((_, index) => (
+            <button
+              type="button"
+              class:list={[
+                "carousel-dot h-3 w-3 rounded-full transition",
+                index === 0 ? "bg-white" : "bg-white/50",
+              ]}
+              data-dot={index}
+              aria-label={`Ir a la imagen ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<script>
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const prevBtn = carousel.querySelector("[data-prev]");
+    const nextBtn = carousel.querySelector("[data-next]");
+    const dots = carousel.querySelectorAll("[data-dot]");
+    const intervalAttr = carousel.getAttribute("data-interval");
+    const autoplayTime = intervalAttr ? Number(intervalAttr) : 5000;
+
+    if (!slides.length || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    let autoplay: number | undefined;
+
+    function updateCarousel(index: number) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("bg-white", i === index);
+        dot.classList.toggle("bg-white/50", i !== index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel(currentIndex);
+    }
+
+    function goToSlide(index: number) {
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplay = window.setInterval(nextSlide, autoplayTime);
+    }
+
+    function stopAutoplay() {
+      if (autoplay) {
+        window.clearInterval(autoplay);
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      startAutoplay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      startAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        startAutoplay();
+      });
+    });
+
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+
+    updateCarousel(currentIndex);
+    startAutoplay();
+  });
+</script>

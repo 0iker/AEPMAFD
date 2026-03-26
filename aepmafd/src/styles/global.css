@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #E86824;
+  --color-secondary: #144F6F;
+}
+
+.hero-banner {
+  background-image: url("/banner.webp");
+}
+
+.small-caps {
+  font-variant: small-caps;
+  text-shadow: 0 0 3px rgb(79, 75, 81), 3px 3px 5px #000;
+}
+
+.carousel-slide {
+  opacity: 0;
+  transition: opacity 450ms ease;
+  pointer-events: none;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}

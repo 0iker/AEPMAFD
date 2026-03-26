@@ -1,0 +1,23 @@
+---
+interface Props {
+  reverse?: boolean;
+}
+
+const { reverse = false } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-6 py-10">
+  <div
+    class:list={[
+      "grid gap-10 md:grid-cols-2 md:items-center",
+      reverse && "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1",
+    ]}
+  >
+    <div>
+      <slot name="left" />
+    </div>
+    <div>
+      <slot name="right" />
+    </div>
+  </div>
+</section>

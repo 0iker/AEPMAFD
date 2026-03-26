@@ -1,14 +1,57 @@
 ---
 import PageHero from "@components/PageHero.astro";
 import Carrusel from "@components/Carrusel.astro";
+import Content from "@components/Content.astro";
 
 import Layout from "@layouts/Layout.astro";
+
+import carrusel1 from "@assets/carrusel1.webp";
+import carrusel2 from "@assets/carrusel2.webp";
+import carrusel3 from "@assets/carrusel3.webp";
+import carrusel4 from "@assets/carrusel4.webp";
+
+const slides = [
+  {
+    src: carrusel1.src,
+    alt: "Actividad física en grupo",
+  },
+  {
+    src: carrusel2.src,
+    alt: "Personas entrenando",
+  },
+  {
+    src: carrusel3.src,
+    alt: "Sesión deportiva",
+  },
+  {
+    src: carrusel4.src,
+    alt: "Sesión deportiva",
+  },
+];
 ---
 
 <Layout>
   <PageHero
     title="Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte"
-    image="/banner.jpg"
   />
-  <Carrusel />
+  <Content>
+    <Fragment slot="left">
+      <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
+        Sobre la asociación
+      </h2>
+      <p class="mt-4 text-lg leading-8 text-neutral-950">
+        La Asociación Española de Psicopedagogía de la Motricidad, la Actividad
+        Física y el Deporte es una organización concebida para promover, formar,
+        acreditar y difundir el conocimiento en este ámbito.
+      </p>
+    </Fragment>
+    <Fragment slot="right">
+      <img
+        src="/logo-aepmafd.svg"
+        alt="Logo de la AEPMAFD"
+        class="mx-auto w-full max-w-sm object-contain"
+      />
+    </Fragment>
+  </Content>
+  <Carrusel slides={slides} />
 </Layout>

@@ -1,6 +1,17 @@
-<footer class="text-center relative w-full mt-4 bg-[#00000042]">
-  <p class="p-3 text-black text-sm">
-    <b>&copy; 2025</b> Asociación Española de Psicopedagogía de la Motricidad, la
-    Actividad Física y el Deporte.
-  </p>
+---
+import CopyrightIcon from "src/icons/Copyright.astro";
+---
+
+<footer class="relative w-full mt-4 bg-black/25">
+  <div
+    class="mx-auto flex max-w-6xl flex-col items-center justify-center gap-2 px-4 py-3 text-center text-sm text-black sm:flex-row"
+  >
+    <div class="text-center sm:text-right">
+      Asociación Española de Psicopedagogía de la Motricidad, la Actividad
+      Física y el Deporte
+    </div>
+    <div class="flex items-center gap-1 font-semibold">
+      2025<CopyrightIcon />
+    </div>
+  </div>
 </footer>
