@@ -11,40 +11,42 @@ import { Image } from "astro:assets";
 <Layout>
   <PageHero title="Actividades" />
   <Content>
-    <Fragment slot="left">
-      <h2 class="py-2 mb-2 text-2xl font-semibold text-secondary md:text-3xl">
+    <Fragment slot="title">
+      <h2 class="py-2 text-2xl font-semibold text-secondary md:text-3xl">
         ACTIVIDADES PRINCIPALES:
       </h2>
+    </Fragment>
+    <Fragment slot="left">
       <ul class="list-disc pl-5">
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Organizar simposios, conferencia y mesas redondas
         </li>
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Apoyar y fomentar la investigación en Psicopedagogía de la Motricidad,
           la Actividad Física y el Deporte
         </li>
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Crear un sistema de Acreditación que facilite la profesionalización
           del sector
         </li>
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Facilitar la relación entre entidades nacionales e internacionales
         </li>
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Divulgar y difundir los conocimientos del ámbito en la sociedad
         </li>
         <li
-          class="text-[15px] py-1 leading-6 tracking-tight text-justify text-neutral-950"
+          class="text-[15px] py-3 leading-6 tracking-tight text-justify text-neutral-950"
         >
           Promover y garantizar un desarrollo profesional de esta área
         </li>
@@ -54,7 +56,7 @@ import { Image } from "astro:assets";
       <Image
         src={imgActividades}
         alt="Imagen representativa de los objetivos de la AEPMAFD"
-        class="mx-auto w-full max-w-sm object-contain"
+        class="mx-auto w-full max-w-[350px] object-contain"
       />
     </Fragment>
   </Content>

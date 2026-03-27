@@ -8,11 +8,15 @@ import Layout from "@layouts/Layout.astro";
 <Layout>
   <PageHero title="Conócenos" />
   <Content>
-    <Fragment slot="left">
-      <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
-        Sobre la asociación
+    <Fragment slot="title">
+      <h2 class="py-2 text-2xl font-semibold text-secondary md:text-3xl">
+        SOBRE LA ASOCIACIÓN
       </h2>
-      <p class="mt-4 text-sm leading-6 text-justify text-neutral-950">
+    </Fragment>
+    <Fragment slot="left">
+      <p
+        class="mt-4 text-[15px] leading-6 tracking-tight text-justify text-neutral-950"
+      >
         La <b
           >Asociación Española de Psicopedagogía de la Motricidad, la Actividad
           Física y el Deporte</b
@@ -20,7 +24,9 @@ import Layout from "@layouts/Layout.astro";
         y difundir el conocimiento en Psicopedagogía de la Motricidad, la Actividad
         Física y el Deporte a todos los interesados
       </p>
-      <p class="mt-4 text-sm leading-6 text-justify text-neutral-950">
+      <p
+        class="mt-4 text-[15px] leading-6 tracking-tight text-justify text-neutral-950"
+      >
         En la <b>AEPMAFD</b> creemos firmemente que la psicopedagogía es un campo
         de conocimiento único y diferente, que tiene su campo de acción en la motricidad,
         la actividad física y el deporte. Desde estas premisas queremos ofertar diferentes
@@ -30,7 +36,9 @@ import Layout from "@layouts/Layout.astro";
       <h3 class="mt-3 text-xl font-semibold text-secondary md:text-2xl">
         Misión
       </h3>
-      <p class="text-sm leading-6 text-justify text-neutral-950">
+      <p
+        class="text-[15px] leading-6 tracking-tight text-justify text-neutral-950"
+      >
         La Asociación Española de Psicopedagogía de la Motricidad, la Actividad
         Física y el Deporte <b
           >tiene la misión de formar, acreditar y promover</b
@@ -43,7 +51,7 @@ import Layout from "@layouts/Layout.astro";
       <img
         src="/logo-pmafd.svg"
         alt="Logotipo de abreviatirua AEPMAFD"
-        class="mx-auto w-full max-w-sm object-contain"
+        class="mx-auto w-full max-w-lg object-contain"
       />
     </Fragment>
   </Content>

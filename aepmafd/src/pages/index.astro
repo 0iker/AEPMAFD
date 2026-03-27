@@ -34,12 +34,15 @@ const slides = [
   <PageHero
     title="Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte"
   />
+  <Carrusel slides={slides} />
   <Content>
-    <Fragment slot="left">
+    <Fragment slot="title">
       <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
         Sobre la asociación
       </h2>
-      <p class="mt-4 text-lg leading-8 text-neutral-950">
+    </Fragment>
+    <Fragment slot="left">
+      <p class="text-lg leading-8 text-justify text-neutral-950">
         La Asociación Española de Psicopedagogía de la Motricidad, la Actividad
         Física y el Deporte es una organización concebida para promover, formar,
         acreditar y difundir el conocimiento en este ámbito.
@@ -53,5 +56,4 @@ const slides = [
       />
     </Fragment>
   </Content>
-  <Carrusel slides={slides} />
 </Layout>

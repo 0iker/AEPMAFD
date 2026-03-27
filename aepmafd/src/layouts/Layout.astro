@@ -20,13 +20,11 @@ import Footer from "@components/Footer.astro";
       Física y el Deporte
     </title>
   </head>
-  <body class="m-0 p-0 h-full w-full flex-col">
+  <body class="m-0 p-0 flex h-full w-full min-h-screen flex-col">
     <Header />
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
     <Footer />
   </body>
 </html>
-
-<style></style>
