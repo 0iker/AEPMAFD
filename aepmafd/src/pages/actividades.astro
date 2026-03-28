@@ -8,7 +8,10 @@ import imgActividades from "@assets/actividades.webp";
 import { Image } from "astro:assets";
 ---
 
-<Layout>
+<Layout
+  title="Actividades | AEPMAFD"
+  description="Consulta las principales actividades de la AEPMAFD: congresos, mesas redondas, investigación, acreditación profesional, divulgación y programas formativos vinculados a la motricidad y la actividad física."
+>
   <PageHero title="Actividades" />
   <Content>
     <Fragment slot="title">
@@ -55,8 +58,8 @@ import { Image } from "astro:assets";
     <Fragment slot="right">
       <Image
         src={imgActividades}
-        alt="Imagen representativa de los objetivos de la AEPMAFD"
-        class="mx-auto w-full max-w-[350px] object-contain"
+        alt="Imagen representativa de las actividades de la AEPMAFD"
+        class="w-full h-full object-cover rounded-xl max-w-87.5"
       />
     </Fragment>
   </Content>

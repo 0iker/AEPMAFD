@@ -8,7 +8,10 @@ import imgObjetivos from "@assets/objetivos.webp";
 import { Image } from "astro:assets";
 ---
 
-<Layout>
+<Layout
+  title="Objetivos | AEPMAFD"
+  description="Descubre los objetivos de la AEPMAFD: acreditar profesionales, ofrecer formación y servicios especializados, difundir conocimiento y fomentar la colaboración en psicopedagogía de la motricidad."
+>
   <PageHero title="Objetivos" />
   <Content>
     <Fragment slot="title">
@@ -63,7 +66,7 @@ import { Image } from "astro:assets";
       <Image
         src={imgObjetivos}
         alt="Imagen representativa de los objetivos de la AEPMAFD"
-        class="mx-auto w-full max-w-lg object-contain"
+        class="w-full h-full object-cover rounded-xl"
       />
     </Fragment>
   </Content>

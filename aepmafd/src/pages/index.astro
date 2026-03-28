@@ -30,11 +30,15 @@ const slides = [
 ];
 ---
 
-<Layout>
+<Layout
+  title="AEPMAFD | Psicopedagogía de la Motricidad, Actividad Física y Deporte"
+  description="La AEPMAFD promueve la formación, la acreditación profesional y la difusión del conocimiento científico en psicopedagogía de la motricidad, actividad física y deporte en España."
+>
   <PageHero
     title="Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte"
   />
   <Carrusel slides={slides} />
+
   <Content>
     <Fragment slot="title">
       <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
@@ -47,6 +51,12 @@ const slides = [
         Física y el Deporte es una organización concebida para promover, formar,
         acreditar y difundir el conocimiento en este ámbito.
       </p>
+      <a
+        href="/conocenos"
+        class="inline-block mt-6 text-primary font-medium hover:underline"
+      >
+        Conocer más →
+      </a>
     </Fragment>
     <Fragment slot="right">
       <img
@@ -56,4 +66,115 @@ const slides = [
       />
     </Fragment>
   </Content>
+
+  <section class="bg-neutral-50 py-14">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-8 md:grid-cols-2">
+        <article
+          class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm"
+        >
+          <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
+            Objetivos
+          </h2>
+
+          <p class="mt-4 text-base leading-7 text-neutral-700">
+            La asociación trabaja para consolidar un espacio profesional y
+            académico orientado a la acreditación, la formación especializada y
+            la difusión del conocimiento científico en el ámbito de la
+            motricidad, la actividad física y el deporte.
+          </p>
+
+          <ul
+            class="mt-5 list-disc space-y-2 pl-5 text-neutral-950 marker:text-secondary"
+          >
+            <li>Acreditación de profesionales</li>
+            <li>Formación y servicios especializados</li>
+            <li>Difusión del conocimiento científico</li>
+          </ul>
+
+          <a
+            href="/objetivos"
+            class="mt-6 inline-block font-medium text-primary hover:underline"
+          >
+            Ver todos →
+          </a>
+        </article>
+
+        <article
+          class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm"
+        >
+          <h2 class="text-2xl font-semibold text-secondary md:text-3xl">
+            Actividades
+          </h2>
+
+          <p class="mt-4 text-base leading-7 text-neutral-700">
+            Entre sus líneas de actuación se encuentran la organización de
+            congresos, la promoción de la investigación y el impulso de
+            programas formativos relacionados con la psicopedagogía de la
+            motricidad y la actividad física.
+          </p>
+
+          <ul
+            class="mt-5 list-disc space-y-2 pl-5 text-neutral-950 marker:text-secondary"
+          >
+            <li>Congresos y eventos científicos</li>
+            <li>Investigación en psicopedagogía</li>
+            <li>Programas de formación</li>
+          </ul>
+
+          <a
+            href="/actividades"
+            class="mt-6 inline-block font-medium text-primary hover:underline"
+          >
+            Ver actividades →
+          </a>
+        </article>
+      </div>
+
+      <div class="mt-14">
+        <h2
+          class="mb-8 text-center text-2xl font-semibold text-secondary md:text-3xl"
+        >
+          Nuestros pilares
+        </h2>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div
+            class="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm"
+          >
+            <h3 class="text-lg font-semibold text-primary">Formación</h3>
+            <p class="mt-2 text-sm leading-6 text-neutral-950">
+              Desarrollo profesional continuo en psicopedagogía del movimiento.
+            </p>
+          </div>
+
+          <div
+            class="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm"
+          >
+            <h3 class="text-lg font-semibold text-primary">Investigación</h3>
+            <p class="mt-2 text-sm leading-6 text-neutral-950">
+              Generación y difusión de conocimiento científico.
+            </p>
+          </div>
+
+          <div
+            class="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm"
+          >
+            <h3 class="text-lg font-semibold text-primary">Salud</h3>
+            <p class="mt-2 text-sm leading-6 text-neutral-950">
+              Mejora del bienestar a través de la actividad física.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-10 text-center">
+    <p class="text-base leading-7 text-neutral-600">
+      La AEPMAFD impulsa la formación, la acreditación profesional y la difusión
+      del conocimiento científico en el ámbito de la psicopedagogía de la
+      motricidad, la actividad física y el deporte en España.
+    </p>
+  </section>
 </Layout>

@@ -3,23 +3,80 @@ import "@styles/global.css";
 
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+
+import { ClientRouter } from "astro:transitions";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte",
+  alternateName: "AEPMAFD",
+  url: "https://aepmafd.es",
+  logo: "https://aepmafd.es/logo-aepmafd.svg",
+  description:
+    "Asociación orientada a la promoción, formación, acreditación y difusión del conocimiento en psicopedagogía de la motricidad, actividad física y deporte en España.",
+};
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const siteName =
+  "AEPMAFD | Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte";
+
+const {
+  title = siteName,
+  description = "La AEPMAFD promueve, forma, acredita y difunde el conocimiento en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte en España.",
+  image = "/og-default.jpg",
+  noindex = false,
+} = Astro.props;
+
+const canonical = Astro.url.href;
+const ogImage = new URL(image, Astro.url.origin).href;
 ---
 
 <html lang="es" class="overflow-y-scroll">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="La AEPMAFD promueve, forma, acredita y difunde el conocimiento en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte en España"
-    />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta
+      name="robots"
+      content={noindex ? "noindex,nofollow" : "index,follow"}
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta
+      property="og:image:alt"
+      content="Vista previa de la web de la AEPMAFD"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="icon" href="/favicon.ico" />
-    <title>
-      Asociación Española de Psicopedagogía de la Motricidad, la Actividad
-      Física y el Deporte
-    </title>
+    <ClientRouter />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(organizationSchema)}
+    />
   </head>
+
   <body class="m-0 p-0 flex h-full w-full min-h-screen flex-col">
     <Header />
     <main class="flex-1">

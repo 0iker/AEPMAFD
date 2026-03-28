@@ -8,20 +8,22 @@ const { title, subtitle } = Astro.props;
 ---
 
 <section
-  class="hero-banner bg-cover bg-center relative isolate overflow-hidden max-h-31.25 md:h-80"
+  class="hero-banner bg-cover bg-center relative isolate overflow-hidden"
 >
   <div class="absolute inset-0 bg-black/45"></div>
 
-  <div class="absolute inset-0 flex items-center">
-    <div class="mx-auto w-full max-w-8xl px-6">
+  <div
+    class="relative mx-auto flex min-h-[90px] w-full max-w-8xl items-center justify-center px-4 py-6 sm:min-h-[110px] md:min-h-[180px] md:px-6"
+  >
+    <div class="w-full text-center">
       <h1
-        class="w-full h-full flex justify-center text-white font-bold small-caps tracking-tight md:text-[30px]"
+        class="text-2xl text-white font-bold small-caps tracking-tight sm:text-3xl md:text-[30px]"
       >
         {title}
       </h1>
       {
         subtitle && (
-          <p class="mt-4 max-w-2xl text-base text-white/90 md:text-lg">
+          <p class="mx-auto mt-3 max-w-2xl text-sm text-white/90 sm:text-base md:text-lg">
             {subtitle}
           </p>
         )

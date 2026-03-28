@@ -5,7 +5,10 @@ import Content from "@components/Content.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout
+  title="Conócenos | AEPMAFD"
+  description="Conoce la misión y la labor de la AEPMAFD, asociación española dedicada a promover, formar, acreditar y difundir el conocimiento en psicopedagogía de la motricidad, actividad física y deporte."
+>
   <PageHero title="Conócenos" />
   <Content>
     <Fragment slot="title">
@@ -50,8 +53,8 @@ import Layout from "@layouts/Layout.astro";
     <Fragment slot="right">
       <img
         src="/logo-pmafd.svg"
-        alt="Logotipo de abreviatirua AEPMAFD"
-        class="mx-auto w-full max-w-lg object-contain"
+        alt="Logotipo PMAFD de la AEPMAFD"
+        class="w-full h-full object-cover rounded-xl"
       />
     </Fragment>
   </Content>
