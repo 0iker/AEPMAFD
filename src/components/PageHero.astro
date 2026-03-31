@@ -4,10 +4,13 @@ interface Props {
   subtitle?: string;
 }
 
+import banner from "@assets/banner.webp";
+
 const { title, subtitle } = Astro.props;
 ---
 
 <section
+  style={`background-image: url(${banner.src})`}
   class="hero-banner bg-cover bg-center relative isolate overflow-hidden"
 >
   <div class="absolute inset-0 bg-black/45"></div>

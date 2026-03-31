@@ -8,6 +8,8 @@ const links = [
 ];
 
 const currentPath = Astro.url.pathname;
+
+import MenuIcon from "@icons/Menu.astro";
 ---
 
 <header class="border-b border-neutral-200 bg-white">
@@ -58,7 +60,7 @@ const currentPath = Astro.url.pathname;
       aria-controls="mobile-menu"
       type="button"
     >
-      Menú
+      <MenuIcon />
     </button>
   </div>
 

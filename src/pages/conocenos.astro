@@ -3,6 +3,8 @@ import PageHero from "@components/PageHero.astro";
 import Content from "@components/Content.astro";
 
 import Layout from "@layouts/Layout.astro";
+
+import pmafd from "@assets/pmafd.svg";
 ---
 
 <Layout
@@ -52,7 +54,7 @@ import Layout from "@layouts/Layout.astro";
     </Fragment>
     <Fragment slot="right">
       <img
-        src="/logo-pmafd.svg"
+        src={pmafd.src}
         alt="Logotipo PMAFD de la AEPMAFD"
         class="w-full h-full object-cover rounded-xl"
       />
