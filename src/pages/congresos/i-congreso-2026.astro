@@ -1,0 +1,281 @@
+---
+import PageHero from "@components/PageHero.astro";
+import Button from "@components/Button.astro";
+import ExternalLink from "@components/ExternalLink.astro";
+
+import Layout from "@layouts/Layout.astro";
+
+const congresoUrl = "https://www.aearedo.es/es/congreso2026aepmafd";
+
+const datosClave = [
+  { label: "Fechas", valor: "18 y 19 de junio de 2026" },
+  {
+    label: "Modalidad",
+    valor: "Online · plataforma digital de la AEPMAFD",
+  },
+  {
+    label: "Organizan",
+    valor: "Consejo Superior de Deportes y AEPMAFD",
+  },
+  { label: "Estado", valor: "Celebrado" },
+];
+
+const objetivos = [
+  "Intercambio de conocimiento y experiencias entre profesionales.",
+  "Presentación de casos reales resueltos.",
+  "Colaboración entre investigadores, entrenadores y profesionales.",
+  "Abordaje de los retos actuales del ámbito sociodeportivo con nuevas propuestas de intervención.",
+];
+
+const destinatarios = [
+  "Estudiantes de CAFD, pedagogía, psicología, sociología y afines.",
+  "Maestros y profesorado de actividad física.",
+  "Entrenadores.",
+  "Investigadores en ciencias del deporte.",
+];
+
+const programaDia19 = [
+  "«Innovación educativa: patios activos», Dr. Honorato Morente.",
+  "«Síntesis de la motricidad en la nueva era», Dra. Silvia Arribas.",
+  "«Emociones y actividad física», Dra. Izaskun Luis de Cos y Dra. Saioa Urrutia Gutiérrez.",
+];
+
+const ponentes = [
+  {
+    nombre: "José A. Pérez Turpín",
+    cargo: "Catedrático, Universidad de Alicante",
+  },
+  {
+    nombre: "Honorato Morente, PhD",
+    cargo: "Profesor titular, Universidad de Málaga",
+  },
+  {
+    nombre: "Silvia Arribas-Galarraga",
+    cargo: "Grupo Erronka (UPV/EHU)",
+  },
+  {
+    nombre: "Izaskun Luis de Cos y Saioa Urrutia Gutiérrez",
+    cargo: "Grupo Erronka (UPV/EHU)",
+  },
+];
+
+const comiteInvestigadores = [
+  "Dra. Concepción Suárez Llorca (UA)",
+  "Dra. Izaskun Luis de Cos",
+  "Dra. Saioa Urrutia Gutiérrez",
+  "Carlos Elvira Aranda",
+  "María José Gomis Gomis",
+  "Sergio Pérez Galiana",
+  "Héctor Bernabé Lorca",
+  "Andreu Rubio Pérez",
+  "Jorge Lázaro Esparcia",
+  "Arantxa Fuentes Suárez",
+];
+
+const listItem =
+  "text-[15px] py-2 leading-6 tracking-tight text-justify text-neutral-950";
+
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "I Congreso de la Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte",
+  startDate: "2026-06-18",
+  endDate: "2026-06-19",
+  eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "VirtualLocation",
+    url: congresoUrl,
+  },
+  organizer: [
+    {
+      "@type": "Organization",
+      name: "Consejo Superior de Deportes",
+      // TODO: añadir la URL oficial del CSD cuando se confirme
+    },
+    {
+      "@type": "Organization",
+      name: "Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte",
+      url: "https://aepmafd.es",
+    },
+  ],
+  url: congresoUrl,
+  description:
+    "Primer congreso de la AEPMAFD, celebrado en modalidad online, dedicado a los retos actuales de la enseñanza y el entrenamiento deportivo, con especial atención a las etapas de iniciación.",
+};
+---
+
+<Layout
+  title="I Congreso AEPMAFD 2026 | AEPMAFD"
+  description="I Congreso de la AEPMAFD, celebrado los días 18 y 19 de junio de 2026 en modalidad online y organizado junto al Consejo Superior de Deportes."
+  schema={eventSchema}
+>
+  <PageHero
+    title="I Congreso de la Asociación Española de Psicopedagogía de la Motricidad, la Actividad Física y el Deporte"
+    subtitle="18 y 19 de junio de 2026 · Online"
+  />
+
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <a
+      href="/congresos"
+      class="inline-block font-medium text-primary hover:underline"
+    >
+      ← Volver a Congresos
+    </a>
+
+    <dl
+      class="mt-6 grid gap-px overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-200 sm:grid-cols-2"
+    >
+      {
+        datosClave.map((dato) => (
+          <div class="bg-white p-6">
+            <dt class="text-xs font-semibold uppercase tracking-wide text-secondary">
+              {dato.label}
+            </dt>
+            <dd class="mt-1 text-[15px] leading-6 text-neutral-950">
+              {dato.valor}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="mt-8">
+      <Button href={congresoUrl} external>Visitar la web del congreso</Button>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+      Presentación
+    </h2>
+    <p
+      class="text-[15px] leading-6 tracking-tight text-justify text-neutral-950"
+    >
+      El primer congreso de la asociación se planteó para dar respuesta a los
+      problemas actuales de la enseñanza y el entrenamiento deportivo, con
+      especial atención a las etapas de iniciación.
+    </p>
+    <div class="mt-6">
+      <ExternalLink href={`${congresoUrl}/descripcion`}>
+        Descripción completa en la web del congreso
+      </ExternalLink>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50 py-14">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+        Objetivos
+      </h2>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        {objetivos.map((objetivo) => <li class={listItem}>{objetivo}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+      Dirigido a
+    </h2>
+    <ul class="list-disc pl-5 marker:text-secondary">
+      {destinatarios.map((destinatario) => <li class={listItem}>{destinatario}</li>)}
+    </ul>
+    <div class="mt-6">
+      <ExternalLink href={`${congresoUrl}/destinatarios`}>
+        Destinatarios en la web del congreso
+      </ExternalLink>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50 py-14">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+        Programa
+      </h2>
+
+      <h3 class="py-2 mt-4 text-lg font-semibold md:text-xl">18 de junio</h3>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        <li class={listItem}>
+          Ponencia inaugural: «Psicopedagogía de la motricidad como ciencia
+          educativa», Dr. José Antonio Pérez Turpin.
+        </li>
+      </ul>
+
+      <h3 class="py-2 mt-4 text-lg font-semibold md:text-xl">19 de junio</h3>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        {programaDia19.map((ponencia) => <li class={listItem}>{ponencia}</li>)}
+      </ul>
+      <div class="mt-6">
+        <ExternalLink href={`${congresoUrl}/programa`}>
+          Programa completo en la web del congreso
+        </ExternalLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+      Ponentes
+    </h2>
+    <p class="text-[15px] leading-6 text-neutral-950">
+      Las ponencias en vídeo están disponibles en la
+      <ExternalLink href={`${congresoUrl}/ponentes`}
+        >ficha de ponentes del congreso</ExternalLink
+      >.
+    </p>
+    <ul class="mt-4 divide-y divide-neutral-200 border-y border-neutral-200">
+      {
+        ponentes.map((ponente) => (
+          <li class="py-3">
+            <p class="text-[15px] font-semibold text-neutral-950">
+              {ponente.nombre}
+            </p>
+            <p class="text-[15px] leading-6 text-neutral-700">{ponente.cargo}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="bg-neutral-50 py-14">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-2 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+        Comité científico y organizador
+      </h2>
+
+      <h3 class="py-2 mt-4 text-lg font-semibold md:text-xl">Presidenta</h3>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        <li class={listItem}>Dra. María José Gomis Gomis</li>
+      </ul>
+
+      <h3 class="py-2 mt-4 text-lg font-semibold md:text-xl">Vicepresidente</h3>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        <li class={listItem}>Dr. José Antonio Pérez Turpin</li>
+      </ul>
+
+      <h3 class="py-2 mt-4 text-lg font-semibold md:text-xl">Investigadores</h3>
+      <ul class="list-disc pl-5 marker:text-secondary">
+        {comiteInvestigadores.map((persona) => <li class={listItem}>{persona}</li>)}
+      </ul>
+      <div class="mt-6">
+        <ExternalLink href={`${congresoUrl}/comites`}>
+          Comités en la web del congreso
+        </ExternalLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="mb-6 py-2 text-2xl font-semibold text-secondary md:text-3xl">
+      Organizadores
+    </h2>
+    <div class="flex flex-wrap items-center gap-8">
+      <img src="/logo-aepmafd.svg" alt="Logo AEPMAFD" class="h-16 w-auto" />
+      {/* TODO: sustituir por el logo oficial del Consejo Superior de Deportes (CSD) */}
+      <span class="text-[15px] font-medium text-neutral-700">
+        Consejo Superior de Deportes
+      </span>
+    </div>
+  </section>
+</Layout>

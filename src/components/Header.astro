@@ -4,10 +4,16 @@ const links = [
   { href: "/conocenos", label: "Conócenos" },
   { href: "/objetivos", label: "Objetivos" },
   { href: "/actividades", label: "Actividades" },
+  { href: "/congresos", label: "Congresos" },
   { href: "/estructura", label: "Estructura" },
 ];
 
 const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
 
 import MenuIcon from "@icons/Menu.astro";
 ---
@@ -41,7 +47,7 @@ import MenuIcon from "@icons/Menu.astro";
                 href={link.href}
                 class:list={[
                   "text-sl font-medium transition hover:text-primary",
-                  currentPath === link.href ? "text-primary" : "text-secondary",
+                  isActive(link.href) ? "text-primary" : "text-secondary",
                 ]}
               >
                 {link.label}
@@ -77,7 +83,7 @@ import MenuIcon from "@icons/Menu.astro";
                 href={link.href}
                 class:list={[
                   "block rounded-md px-3 py-2 text-sm font-medium transition hover:bg-neutral-100",
-                  currentPath === link.href
+                  isActive(link.href)
                     ? "bg-neutral-100 text-primary"
                     : "text-secondary",
                 ]}

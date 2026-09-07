@@ -22,6 +22,7 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  schema?: object | object[];
 }
 
 const siteName =
@@ -32,6 +33,7 @@ const {
   description = "La AEPMAFD promueve, forma, acredita y difunde el conocimiento en Psicopedagogía de la Motricidad, la Actividad Física y el Deporte en España.",
   image = "/og-default.jpg",
   noindex = false,
+  schema,
 } = Astro.props;
 
 const canonical = Astro.url.href;
@@ -75,6 +77,14 @@ const ogImage = new URL(image, Astro.url.origin).href;
       type="application/ld+json"
       set:html={JSON.stringify(organizationSchema)}
     />
+    {
+      schema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(schema)}
+        />
+      )
+    }
   </head>
 
   <body class="m-0 p-0 flex h-full w-full min-h-screen flex-col">

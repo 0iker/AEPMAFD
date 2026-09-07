@@ -1,0 +1,43 @@
+---
+interface Props {
+  href: string;
+  external?: boolean;
+  variant?: "primary" | "secondary";
+  class?: string;
+}
+
+import ExternalLinkIcon from "@icons/ExternalLink.astro";
+
+const {
+  href,
+  external = false,
+  variant = "primary",
+  class: className = "",
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+
+const variants = {
+  primary: "bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary",
+  secondary:
+    "bg-secondary text-white hover:bg-secondary/90 focus-visible:ring-secondary",
+};
+---
+
+<a
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  class:list={[base, variants[variant], className]}
+>
+  <slot />
+  {
+    external && (
+      <>
+        <ExternalLinkIcon />
+        <span class="sr-only">(se abre en otra web, en una pestaña nueva)</span>
+      </>
+    )
+  }
+</a>
