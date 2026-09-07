@@ -91,7 +91,7 @@ const eventSchema = {
     {
       "@type": "Organization",
       name: "Consejo Superior de Deportes",
-      // TODO: añadir la URL oficial del CSD cuando se confirme
+      url: "https://www.csd.gob.es/es",
     },
     {
       "@type": "Organization",
@@ -270,12 +270,19 @@ const eventSchema = {
     <h2 class="mb-6 py-2 text-2xl font-semibold text-secondary md:text-3xl">
       Organizadores
     </h2>
-    <div class="flex flex-wrap items-center gap-8">
-      <img src="/logo-aepmafd.svg" alt="Logo AEPMAFD" class="h-16 w-auto" />
-      {/* TODO: sustituir por el logo oficial del Consejo Superior de Deportes (CSD) */}
-      <span class="text-[15px] font-medium text-neutral-700">
-        Consejo Superior de Deportes
-      </span>
+    <div class="flex flex-wrap items-center gap-x-10 gap-y-6">
+      <img
+        src="/logo-csd.png"
+        alt="Logo del Consejo Superior de Deportes"
+        width="622"
+        height="207"
+        class="h-14 w-auto"
+      />
+      <img
+        src="/logo-aepmafd.svg"
+        alt="Logo de la AEPMAFD"
+        class="h-16 w-auto"
+      />
     </div>
   </section>
 </Layout>
